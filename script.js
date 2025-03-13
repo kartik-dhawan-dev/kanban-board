@@ -47,7 +47,8 @@ addBoardButton.addEventListener("click", () => {
     return;
   }
 
-  KANBAN_BOARD_STATE.push({
+  addBoard({
+    id: getRandomId(),
     title: boardTitle,
     tasks: [],
   });
@@ -55,4 +56,5 @@ addBoardButton.addEventListener("click", () => {
   renderKanbanBoard();
 });
 
+initKanbanBoards();
 renderKanbanBoard();

@@ -1,75 +1,3 @@
-const MODAL_STYLES = [
-  "absolute",
-  "flex",
-  "w-screen",
-  "h-screen",
-  "items-center",
-  "justify-center",
-  "bg-gray-100",
-  "bg-opacity-50",
-];
-
-const MODAL_CONTENT_STYLES = [
-  "bg-white",
-  "p-6",
-  "rounded-lg",
-  "shadow-lg",
-  "w-full",
-  "max-w-md",
-];
-
-const ADD_TASK_TITLE_FIELD_STYLES = [
-  "w-full",
-  "mb-4",
-  "p-2",
-  "border",
-  "border-gray-300",
-  "rounded",
-];
-
-const ADD_TASK_DESCRIPTION_FIELD_STYLES = [
-  "w-full",
-  "mb-4",
-  "p-2",
-  "border",
-  "border-gray-300",
-  "rounded",
-];
-
-const ADD_TASK_PRIORITY_FIELD_STYLES = [
-  "w-full",
-  "mb-4",
-  "p-2",
-  "border",
-  "border-gray-300",
-  "rounded",
-];
-
-ADD_TASK_MODAL_BOARD_INDICATOR_STYLES = ["mb-4", "text-lg", "font-semibold"];
-
-const ADD_TASK_MODAL_ACTION_CONTAINER_STYLES = [
-  "flex",
-  "justify-end",
-  "my-2",
-  "space-x-2",
-];
-
-const ADD_TASK_MODAL_OK_BUTTON_STYLES = [
-  "bg-blue-500",
-  "text-white",
-  "px-4",
-  "py-2",
-  "rounded",
-];
-
-const ADD_TASK_MODAL_CANCEL_BUTTON_STYLES = [
-  "bg-gray-500",
-  "text-white",
-  "px-4",
-  "py-2",
-  "rounded",
-];
-
 const createAddTaskModal = (board) => {
   const container = document.createElement("div");
   container.classList.add(...MODAL_STYLES);
@@ -122,7 +50,7 @@ const createAddTaskModal = (board) => {
   document.body.appendChild(container);
 
   okButton.addEventListener("click", () => {
-    board.tasks.push({
+    addTaskToBoard(board, {
       title: titleInput.value,
       description: descriptionInput.value,
       priority: prioritySelect.value ?? null,
