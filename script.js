@@ -9,12 +9,27 @@ const renderKanbanBoard = () => {
   }
 
   kanbanBoardContainer.innerHTML = "";
+  kanbanBoardContainer.classList.add(
+    ...KANBAN_BOARD_CONTAINER_DEFAULT_STYLE_CLASSES
+  );
 
   if (!KANBAN_BOARD_STATE || KANBAN_BOARD_STATE.length === 0) {
-    console.error("KANBAN_BOARD_STATE is empty or not defined.");
+    const emptyStateMessage = document.createElement("div");
+
+    emptyStateMessage.innerText =
+      "No boards available. Please add a new board to get started!";
+
+    emptyStateMessage.classList.add(
+      ...KANBAN_BOARD_CONTAINER_EMPTY_STATE_STYLE_CLASSES
+    );
+
+    kanbanBoardContainer.appendChild(emptyStateMessage);
     return;
   }
 
+  kanbanBoardContainer.classList.add(
+    ...KANBAN_BOARD_CONTAINER_WITH_BOARD_STYLE_CLASSES
+  );
   KANBAN_BOARD_STATE.forEach((board) =>
     kanbanBoardContainer.appendChild(createKanbanBoard(board))
   );

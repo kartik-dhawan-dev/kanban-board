@@ -4,6 +4,33 @@ const KANBAN_BOARD_CONTAINER_ID = "kanban-board-container";
 
 const KANBAN_BOARD_CLASS = "kanban-board";
 
+const KANBAN_BOARD_CONTAINER_DEFAULT_STYLE_CLASSES = [
+  "w-full",
+  "max-w-[1920px]",
+  "mx-auto",
+  "h-full",
+  "p-5",
+  "overflow-auto",
+];
+
+const KANBAN_BOARD_CONTAINER_EMPTY_STATE_STYLE_CLASSES = [
+  "flex",
+  "justify-center",
+  "items-center",
+  "h-full",
+  "text-xl",
+  "text-gray-600",
+];
+
+const KANBAN_BOARD_CONTAINER_WITH_BOARD_STYLE_CLASSES = [
+  "grid",
+  "grid-cols-1",
+  "sm:grid-cols-2",
+  "lg:grid-cols-3",
+  "2xl:grid-cols-4",
+  "gap-[2rem]",
+];
+
 const KANBAN_BOARD_STYLE_CLASSES = [
   "bg-[#F3F4F6]",
   "flex",
